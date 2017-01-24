@@ -10,10 +10,10 @@ TimeQ.max_queries accepts the array of queries and returns the maximal possible 
 
 For example:
 
-A	2	5	vk
-B	9	7	vk
-C	15	6	vk
-D	9	3	vk
+A 2  5 vk  
+B 9  7 vk  
+C 15 6 vk  
+D 9  3 vk  
 
 the max_queries for this array is 3, because queries from B and C are overlapping
 
