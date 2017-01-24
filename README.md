@@ -1,41 +1,19 @@
 # TimeQ
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/time_q`. To experiment with that code, run `bin/console` for an interactive prompt.
+Query is tab-delimited string, containing four params:
+1. query issuing node identificator
+2. time to start query (UNIX timestamp)
+3. query duration (in seconds). During this period the API is considered blocked
+4. API identificator
 
-TODO: Delete this and the text above, and describe your gem
+TimeQ.max_queries accepts the array of queries and returns the maximal possible number of queries to issue (facing the fact, that the API we're calling may be blocked)
 
-## Installation
+For example:
 
-Add this line to your application's Gemfile:
+A	2	5	vk
+B	9	7	vk
+C	15	6	vk
+D	9	3	vk
 
-```ruby
-gem 'time_q'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install time_q
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/unpatioli/time_q.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+the max_queries for this array is 3, because queries from B and C are overlapping
 
