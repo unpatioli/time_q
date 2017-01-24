@@ -1,5 +1,7 @@
 require "time_q/version"
 
 module TimeQ
-  # Your code goes here...
+  def self.parse(arr)
+    arr.map { |item| item.split("\t") }
+  end
 end
