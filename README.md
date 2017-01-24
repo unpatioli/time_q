@@ -17,3 +17,6 @@ D	9	3	vk
 
 the max_queries for this array is 3, because queries from B and C are overlapping
 
+TimeQ.max_queries uses the greedy algorithm:
+1. sort queries by the end
+2. iterate through sorted list, increasing the counter if current query is not overlapping with the previous one
