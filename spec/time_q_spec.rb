@@ -28,6 +28,22 @@ RSpec.describe TimeQ do
 
         expect(TimeQ.max_queries(queue)).to eq 3
       end
+
+      it 'many APIs' do
+        queue = [
+          "A\t3\t5\tyandex",
+          "B\t9\t2\tyandex",
+          "A\t24\t5\tyandex",
+          "B\t16\t9\tyandex",
+          "A\t11\t6\tyandex",
+          "A\t2\t5\tvk",
+          "B\t9\t7\tvk",
+          "C\t15\t6\tvk",
+          "D\t9\t3\tvk",
+        ]
+
+        expect(TimeQ.max_queries(queue)).to eq 7
+      end
     end
   end
 
